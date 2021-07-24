@@ -1,0 +1,65 @@
+// Note: This is the main SCSS File...!
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Times New Roman", Times, serif;
+}
+
+/*
+
+Note: These are the css siper powers...!
+1: operators.
+2: variables.
+3: nesting.
+4: mixin
+5: parameters
+
+*/
+
+// Note: Global variables...!
+$bg-color: blue;
+$header-color: white;
+$complete-height: 100vh;
+$complete-width: 100vw;
+$header-span: silver;
+
+// Note: Important properties variables...!
+@mixin flexProperties {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin commonCodeInHeaders($spacingParam, $transform-prop) {
+  color: $header-color;
+  text-transform: $transform-prop;
+  letter-spacing: $spacingParam;
+  text-align: center;
+}
+
+body {
+  background-color: $bg-color;
+}
+
+div {
+  height: $complete-height;
+  width: $complete-width;
+  @include flexProperties;
+}
+
+h1 {
+  font-size: 50px - 15px;
+  @include commonCodeInHeaders(0.5rem, uppercase);
+
+  span {
+    color: $header-span;
+  }
+}
+
+h2 {
+  font-size: 10px + 20px;
+  @include commonCodeInHeaders(0.2rem, capitalize);
+}
